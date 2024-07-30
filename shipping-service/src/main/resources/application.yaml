@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: shipping-service
+
+server:
+  port: 8081
+
+
+grpc:
+  client:
+    inventory-service:
+      address: localhost:9090
+      enable-keep-alive: true
+      keep-alive-without-calls: true
+      negotiation-type: plaintext
+  server:
+    port: 9091

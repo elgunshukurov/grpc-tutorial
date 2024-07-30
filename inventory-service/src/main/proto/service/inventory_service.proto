@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package service;
+
+import "domain/inventory_domain.proto";
+
+option java_package = "web.app.inventory";
+option java_outer_classname = "InventoryServiceProto";
+
+service InventoryService {
+  rpc CheckStock (domain.ProductRequest) returns (domain.StockResponse);
+  rpc UpdateStock (domain.UpdateStockRequest) returns (domain.UpdateStockResponse);
+  rpc GetInventoryList (domain.Empty) returns (domain.InventoryListResponse);
+}

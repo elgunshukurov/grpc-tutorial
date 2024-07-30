@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package domain;
+
+option java_package = "web.app.shipping";
+option java_outer_classname = "ShippingDomainProto";
+
+message ShipmentRequest {
+  string order_id = 1;
+  string shipping_address = 2;
+  string product_id = 3;
+}
+
+message ShipmentResponse {
+  string shipment_id = 1;
+  string status = 2;
+  string estimated_delivery_date = 3;
+}
+
+message ShipmentTrackingRequest {
+  string shipment_id = 1;
+}
+
+message ShipmentTrackingResponse {
+  string shipment_id = 1;
+  string status = 2;
+  string current_location = 3;
+}
+
+message ShipmentCancelRequest {
+  string shipment_id = 1;
+  string reason = 2;
+}
+
+message ShipmentCancelResponse {
+  bool success = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package service;
+
+import "domain/shipping_domain.proto";
+
+option java_package = "web.app.shipping";
+option java_outer_classname = "ShippingServiceProto";
+
+service ShippingService {
+  rpc CreateShipment (domain.ShipmentRequest) returns (domain.ShipmentResponse);
+  rpc TrackShipment (domain.ShipmentTrackingRequest) returns (domain.ShipmentTrackingResponse);
+  rpc CancelShipment (domain.ShipmentCancelRequest) returns (domain.ShipmentCancelResponse);
+}
